@@ -1,9 +1,11 @@
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    
     private int firstNumber = 10;
     private int secondNumber = 5;
     private string[] students = {    "ABEL K ANTONY" , 
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this);
         //Addition();
         //Subtraction();
         //Multiplication();
@@ -63,4 +66,17 @@ public class GameManager : MonoBehaviour
             print(students[i] + "call me urgently");
         }
     }
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void LoadSplashScene()
+    {
+        SceneManager.LoadScene("SplashScene");
+    }
+    public void LoadInstructionScene()
+    {
+        SceneManager.LoadScene("InstructioScene");
+    }
+
 }
