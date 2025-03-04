@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
     private int firstNumber = 10;
     private int secondNumber = 5;
     private string[] students = {    "ABEL K ANTONY" , 
@@ -22,6 +21,12 @@ public class GameManager : MonoBehaviour
                                     "UDIT",
                                     "DEVANARAYANAN"};
 
+    public int[] marks;
+
+    [SerializeField] int x;
+    [SerializeField] int y;
+    [SerializeField] int z;
+
 
     void Start()
     {
@@ -29,8 +34,47 @@ public class GameManager : MonoBehaviour
         //Addition();
         //Subtraction();
         //Multiplication();
-        SendMessageUsingForeach();
-        SendMessageUsingForLoop();  
+        //SendMessageUsingForeach();
+        //SendMessageUsingForLoop();
+        //FindLargestNumber();
+        //FindHighestMark();
+    }
+
+    public void FindLargestNumber()
+    {
+        int largestNumber;
+        if(x>y)
+        {
+            if(x>z)
+            {
+                largestNumber = x;
+                print("Largest Number is "+ largestNumber);
+            }
+        }
+        else if(y>z)
+        {
+            largestNumber=y;
+            print("Largest Number is " + largestNumber);
+        }
+        else
+        {
+            largestNumber = z;
+            print("Largest Number is " + largestNumber);
+        }
+
+    }
+
+    public void FindHighestMark()
+    {
+        int highestMark = 0;
+        for(int i=0; i<marks.Length; i++)
+        {
+            if (highestMark < marks[i])
+            {
+                highestMark = marks[i];
+            }
+        }
+        print("Highest mark is " + highestMark);
     }
 
     void Addition()
